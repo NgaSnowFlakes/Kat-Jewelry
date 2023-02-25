@@ -1,0 +1,109 @@
+.product .product-category .select-category {
+	width: 160px;
+	border: none;
+	overflow: hidden;
+}
+
+.form-select:focus {
+	border: none;
+	outline: none;
+	/* background-color: none; */
+	box-shadow: none;
+}
+
+.search {
+	height: 45px;
+	outline: none;
+	border: 2px solid #42210b;
+	border-radius: 20px 0px 0px 20px;
+	background-color: transparent;
+	border-right: none;
+}
+
+.btn1 {
+	height: 45px;
+	outline: none;
+	border: 2px solid #42210b;
+	border-radius: 0px 20px 20px 0px;
+	background-color: #42210b;
+	border-right: none;
+	color: white;
+	/* background-color: #ea8025; */
+	transition: 0.4s all;
+}
+
+.btn1:hover {
+	background-color: rgb(129, 57, 57);
+	font-weight: 700;
+}
+
+/* Product */
+.product-board {
+	clear: both;
+}
+
+.product-board .card {
+	border: none;
+}
+
+.product-board .card-body {
+	color: #2e1c11;
+}
+
+.product-board .card .image {
+	position: relative;
+}
+
+.product-board .overlay {
+	opacity: 0;
+	transition: 0.4s all linear;
+}
+
+.product-board .overlay .icon {
+	text-align: center;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.product-board .overlay .icon a {
+	background-color: #42210b;
+	color: white;
+	padding: 5px 0px;
+}
+
+.product-board .overlay .icon i {
+	font-size: 20px;
+	cursor: pointer;
+}
+
+.product-board .card:hover .overlay {
+	opacity: 0.8;
+}
+
+.product-board .card:hover {
+	box-shadow: 2px 3px 9px 3px rgb(66 33 11/ 16%);
+}
+
+.product-board .card:hover img {
+	transform: rotate(-1deg);
+}
+
+.pagination a {
+	font-size: 20px;
+}
+
+.pagination .page-link {
+	color: #42210b;
+}
+
+.page-link-active {
+	background-color: #42210b;
+	color: white !important;
+}
+
+.pagination a:hover {
+	background-color: #42210b;
+	color: white !important;
+}
