@@ -198,6 +198,24 @@
 					url : "GetProductByCateController?cateID=" + cateID
 				}).then(function successCallback(response) {
 					$scope.products = response.data;
+					$scope.currentPage = 1;
+					$scope.productPerPage = 8;
+					$scope.begin = 0;
+					$scope.pageCount = [];
+
+					// Update the pageCount array based on the number of products and productPerPage
+					for (var i = 1; i <= Math
+							.ceil(($scope.products.length)
+									/ $scope.productPerPage); i++) {
+						$scope.pageCount.push(i);
+					}
+
+					// Update the begin variable based on the current page
+					$scope.loadItem = function(pageNumber) {
+						$scope.currentPage = pageNumber;
+						$scope.begin = ($scope.currentPage - 1)
+								* $scope.productPerPage;
+					};
 				});
 			}
 
