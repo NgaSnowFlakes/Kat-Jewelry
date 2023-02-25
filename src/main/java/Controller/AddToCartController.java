@@ -45,9 +45,9 @@ public class AddToCartController extends HttpServlet {
 		response.setContentType("text/html");
 		
 		String pid = request.getParameter("pID");
-		String pQuantity = request.getParameter("pQuantity");
 		int quantity = 1;
-		if(!pQuantity.equals("")) {
+		String pQuantity = request.getParameter("pQuantity");
+		if(!(pQuantity.equals(""))) {
 			quantity = Integer.parseInt(pQuantity);
 		}
 		System.out.println("quantity: " + quantity);
