@@ -81,7 +81,7 @@
 							<div class="overlay">
 								<div class="icon d-flex w-100 justify-content-between">
 									<a ng-click="addToCart(o.pID)" style="width: 45%;"><i
-										class="bi bi-bag me-1" id="addToCart"></i>Add</a> <a
+										class="bi bi-bag me-1"></i>Add</a> <a
 										href="detail?pID={{o.pID}}" style="width: 45%;"><i
 										class="bi bi-search me-1"></i>View</a>
 								</div>
@@ -107,7 +107,7 @@
 							</a></li>
 							<li class="page-item" ng-repeat="item in pageCount"><a
 								class="page-link" href="" ng-click="loadItem(item)"
-								ng-class="{ 'page-link-active': item === currentPage }">{{item}}</a></li>
+								ng-class="{'page-link-active': item === currentPage }">{{item}}</a></li>
 
 							<li class="page-item"
 								ng-disabled="currentPage == pageCount.length"><a
@@ -220,9 +220,10 @@
 			}
 
 			$scope.addToCart = function(pID) {
+				var quantity ="";
 				$http({
 					method : 'POST',
-					url : "add_to_cart?pID=" + pID
+					url : "add_to_cart?pID="+pID+"&pQuantity="+quantity
 				}).then(function successCallback(response) {
 					$scope.data = response.data;
 					console.log($scope.data);
@@ -231,8 +232,7 @@
 					}else{
 						showToast();
 					}
-					
-					
+	
 				});
 
 			}
